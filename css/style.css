@@ -1,0 +1,14 @@
+/*
+font-family: 'Lato', sans-serif;
+font-family: 'Noto Sans JP', sans-serif;
+*/
+body {
+    font-family: 'Lato', sans-serif;
+}
+h1, h2, h3 {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: bold;
+}
+main {
+    min-height: 100vh;
+}
