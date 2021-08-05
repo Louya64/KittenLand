@@ -13,3 +13,13 @@ h1, h2, h3 {
 main {
     min-height: 100vh;
 }
+.card {
+    border: 2px dotted #32fbe2;
+    border-radius: 10px;
+    text-align: center;
+}
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
