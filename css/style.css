@@ -23,3 +23,12 @@ main {
     flex-direction: column;
     justify-content: space-between;
 }
+input[type=checkbox] {
+    width: 24px;
+    height: 24px;
+    margin-left: 40px;
+    margin-top: 12px;
+}
+.result_food_calculator {
+    display: none;
+}
