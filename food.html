@@ -62,7 +62,7 @@
                 <a class="nav-link" href="breeds.html">Breeds</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="food.html">How to feed my kitten</a>
+                <a class="nav-link" href="food.html">Food calculator</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="contact.html">Contact</a>
@@ -74,130 +74,227 @@
     </header>
 
     <main class="my-5 container">
-      <h1 class="text-center display-1 text-primary my-5">
-        Calculate how much food you may give to your kitten
-      </h1>
-      <p>When cats reach <em class="fs-4">12 month old</em>, they stop being considered as kitten and need less food. They will need on average 40 to 50g dry food per day.<br>If they are <em class="fs-4">sterilized</em>, they need food for sterilized cats.<br>And when they reach <em class="fs-4">7 years old</em>, they can be considered as senior, and need food for senior cats.</p>
-      <form action="" method="" id="form_food" class="py-5">
+      <h1 class="text-center display-1 text-primary my-5">Food calculator</h1>
+      <p>
+        Answer few questions to know how much dry food you should give to your
+        cat.
+      </p>
+      <form action="" method="" id="formFood" class="py-5">
         <div class="mb-3 row">
           <div class="col-6">
-            <label for="age" class="form-label"
-              >How many month is your kitten old?</label
-            >
-            <input
-              type="number"
-              class="form-control"
-              id="age"
-              name="age"
-              placeholder="0"
-              step="1"
-              min="0"
-            />
+            <span class="text-primary">How old is he / she?</span><br />
+            My cat is
+            <select class="bg-primary text-white" name="age" id="age">
+              <option value="">Click to select his age</option>
+              <option value="1" class="baby">1 week (or less)</option>
+              <option value="2" class="baby">2 weeks</option>
+              <option value="3" class="baby">3 weeks</option>
+              <option value="4" class="baby">4 weeks</option>
+              <option value="5" class="baby">5 weeks</option>
+              <option value="6" class="baby">6 weeks</option>
+              <option value="7" class="baby">7 weeks</option>
+              <option value="8" class="young">8 weeks / 2 month</option>
+              <option value="9" class="young">3 month</option>
+              <option value="10" class="young">4 month</option>
+              <option value="11" class="young">5 month</option>
+              <option value="12" class="young">6 month</option>
+              <option value="13" class="young">7 month</option>
+              <option value="14" class="young">8 month</option>
+              <option value="15" class="young">9 month</option>
+              <option value="16" class="young">10 month</option>
+              <option value="17" class="young">11 month</option>
+              <option value="18" class="adult">12 month / 1 year</option>
+              <option value="19" class="adult">
+                more than 1 year and less than 7 years
+              </option>
+              <option value="20" class="old">
+                more than 7 years and less than 12 years
+              </option>
+              <option value="21" class="older">more than 12 years</option>
+            </select>
+            old
           </div>
-          <div class="col-6">
-            <label for="idk_age">I don't know</label><br />
-            <input type="checkbox" id="idk_age" />
+          <div class="col-4">
+            <label for="idkAge">I don't know</label><br />
+            <input type="checkbox" id="idkAge" />
           </div>
         </div>
         <div class="mb-3 row">
           <div class="col-6">
-            <label for="weight" class="form-label"
-              >How much does your kitten weigh? (ex 0.6 for 0.6kg)</label
-            >
+            <span class="text-primary">How much does he / she weigh?</span
+            ><br />
+            My cat weighs
             <input
               type="number"
-              class="form-control"
-              id="weight"
-              name="weight"
-              placeholder="0"
+              placeholder="ex: 0.5"
               step="0.01"
               min="0"
+              class="bg-primary text-white"
+              name="weight"
+              id="weight"
             />
+            kg
           </div>
-          <div class="col-6">
-            <label for="idk_weight">I don't know</label><br />
-            <input type="checkbox" id="idk_weight" />
+          <div class="col-4">
+            <label for="idkWeight">I don't know</label><br />
+            <input type="checkbox" id="idkWeight" />
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <div class="col-4" id="sterilizedQuestion">
+            <span class="text-primary">Is he / she strérilized?</span><br />
+            <select
+              class="bg-primary text-white"
+              name="sterilized"
+              id="sterilized"
+            >
+              <option value="no">no</option>
+              <option value="yes">yes</option>
+            </select>
           </div>
         </div>
         <div class="my-5">
           <button
             type="submit"
             class="btn btn-primary fs-2"
-            name="food_form_submit"
+            name="foodFormSubmit"
           >
             Calculate
           </button>
         </div>
       </form>
-      <div class="result_food_calculator" id="food_wrong_result_div">
-        You informed your kitten's age as 
-        <span
-          id="food_wrong_result_age"
-          class="text-primary fs-3"
-        ></span>
-         month old and your kitten'weight as 
-        <span
-          id="food_wrong_result_weight"
-          class="text-primary fs-3"
-        ></span>
-        kg.<br>
-        If you are sure that your pet is a kitten... maybe you should meet a veterinary. The weigth you entered doesn't match with his age.
-      </div>
-      <div class="result_food_calculator" id="food_result_div">
-        You should give him / her
-        <span
-          id="food_result_span"
-          class="text-primary fs-3"
-        ></span>
-        g of dry cat food
-      </div>
-      <div class="result_food_calculator" id="food_table">
-        You checked "I don't know" or didn't fill age or weight so here is a
-        table that shows what is the usual weight for kitten considering their
-        age (you should weigh your kitten to be sure to give him what he really
-        needs)"<br />
-        <table class="table table-striped mt-5">
-          <thead>
-            <tr class="text-secondary">
-              <th>Kitten age</th>
-              <th>Kitten weight</th>
-              <th>Dry food</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1 month</td>
-              <td>0.6kg</td>
-              <td>25-40g</td>
-            </tr>
-            <tr>
-              <td>2 month</td>
-              <td>1kg</td>
-              <td>40-50g</td>
-            </tr>
-            <tr>
-              <td>3 month</td>
-              <td>1.8kg</td>
-              <td>55g</td>
-            </tr>
-            <tr>
-              <td>4 month</td>
-              <td>2.5kg</td>
-              <td>55-60g</td>
-            </tr>
-            <tr>
-              <td>5 month</td>
-              <td>3kg</td>
-              <td>60-70g</td>
-            </tr>
-            <tr>
-              <td>more than 6 month</td>
-              <td>more than 3.6kg</td>
-              <td>75g</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+
+        <div class="foodRes hidden" id="foodResProblem">
+          You informed us that your cat is
+          <span id="foodResProblemAge" class="text-primary fs-3"></span>
+           old and weighs
+          <span id="foodResProblemWeight" class="text-primary fs-3"></span>
+          kg.<br />
+          If you are sure that your pet is a cat... maybe you should meet a
+          veterinary. The weigth you entered doesn't match with his age.
+        </div>
+        <div class="foodRes hidden" id="foodCalculDiv">
+          You should give him / her
+          <span id="foodCalculSpan" class="text-primary fs-3"></span>
+           per day.
+        </div>
+        <div class="foodRes hidden" id="foodTable">
+          You checked "I don't know" or didn't fill age or weight correctly so here is a
+          table that shows what is the usual weight for cats considering their
+          age (you should weigh your cat to be sure to give him what he really
+          needs)"<br />
+          <table class="table table-striped mt-5">
+            <thead>
+              <tr class="text-secondary">
+                <th>Age: baby</th>
+                <th>Kitten's average weight</th>
+                <th>Milk for kittens</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1 week</td>
+                <td>0.1kg</td>
+                <td>13ml</td>
+              </tr>
+              <tr>
+                <td>2 week</td>
+                <td>0.25kg</td>
+                <td>17ml</td>
+              </tr>
+              <tr>
+                <td>3 week</td>
+                <td>0.4kg</td>
+                <td>20ml</td>
+              </tr>
+              <tr>
+                <td>4 week</td>
+                <td>0.6kg</td>
+                <td>22ml</td>
+              </tr>
+              <tr class="text-secondary">
+                <th>Age: young baby</th>
+                <th>Kitten's average weight</th>
+                <th>Milk + food for kittens</th>
+              </tr>
+              <tr>
+                <td>5 week</td>
+                <td>0.7kg</td>
+                <td>15ml + 10g</td>
+              </tr>
+              <tr>
+                <td>6 week</td>
+                <td>0.8kg</td>
+                <td>15ml + 15g</td>
+              </tr>
+              <tr>
+                <td>7 week</td>
+                <td>0.9kg</td>
+                <td>10ml + 20g</td>
+              </tr>
+              <tr class="text-secondary">
+                <th>Age: young</th>
+                <th>Kitten's average weight</th>
+                <th>Food for kittens</th>
+              </tr>
+              <tr>
+                <td>8 weeks / 2 month</td>
+                <td>1kg</td>
+                <td>40-50g</td>
+              </tr>
+              <tr>
+                <td>3 month</td>
+                <td>1.8kg</td>
+                <td>55g</td>
+              </tr>
+              <tr>
+                <td>4 month</td>
+                <td>2.5kg</td>
+                <td>55-60g</td>
+              </tr>
+              <tr>
+                <td>5 month</td>
+                <td>3kg</td>
+                <td>60-70g</td>
+              </tr>
+              <tr>
+                <td>more than 6 month until 1 year</td>
+                <td>more than 3.6kg</td>
+                <td>75g</td>
+              </tr>
+              <tr class="text-secondary">
+                <th>Age: adult</th>
+                <th>Cat's average weight</th>
+                <th>Food for adult (steriliezed if he is)</th>
+              </tr>
+              <tr>
+                <td>between 1 and 7 years</td>
+                <td>around 2.3kg</td>
+                <td>30-40g</td>
+              </tr>
+              <tr>
+                <td>between 1 and 7 years</td>
+                <td>around 4.5kg</td>
+                <td>45-65g</td>
+              </tr>
+              <tr>
+                <td>between 1 and 7 years</td>
+                <td>around 6.8kg</td>
+                <td>65-95kg</td>
+              </tr>
+              <tr class="text-secondary">
+                <th>Age: old</th>
+                <th>Cat's average weight</th>
+                <th>Food for old cats</th>
+              </tr>
+              <tr>
+                <td>more than 7 years</td>
+                <td>same weights as for adults</td>
+                <td>same quantities as for adults</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
     </main>
 
     <script
@@ -206,6 +303,6 @@
       crossorigin="anonymous"
     ></script>
 
-    <script src="js/script2.js"></script>
+    <script src="js/calculator.js"></script>
   </body>
 </html>
