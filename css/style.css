@@ -3,23 +3,46 @@ font-family: 'Lato', sans-serif;
 font-family: 'Noto Sans JP', sans-serif;
 */
 body {
-    font-family: 'Lato', sans-serif;
-    font-size: 20px;
+  font-family: "Lato", sans-serif;
+  font-size: 20px;
 }
-h1, h2, h3 {
-    font-family: 'Noto Sans JP', sans-serif;
-    font-weight: bold;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: bold;
 }
 main {
-    min-height: 100vh;
+  min-height: 100vh;
 }
 .card {
-    border: 2px dotted #32fbe2;
-    border-radius: 10px;
-    text-align: center;
+  border: 2px dotted #32fbe2;
+  border-radius: 10px;
+  text-align: center;
 }
 .card-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+input,
+select {
+  border: none;
+  border-radius: 0.15rem;
+}
+#formFood input[type="number"] {
+  width: 100px;
+  height: 27px;
+}
+#formFood input[type="checkbox"] {
+  width: 24px;
+  height: 24px;
+  margin-left: 40px;
+  margin-top: 12px;
+}
+.hidden {
+  display: none;
 }
